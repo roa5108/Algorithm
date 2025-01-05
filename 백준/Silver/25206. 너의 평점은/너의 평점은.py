@@ -10,11 +10,8 @@ grades={'A+':4.5,
 sum=0
 credit_sum=0
 for i in range(20):
-    data=input()
-    info=data.split()
-    subject=info[0]
-    credit=float(info[1])
-    grade=info[2]
+    subject,credit,grade=input().split()
+    credit=float(credit)
     if grade=='P':
         pass
     else:
