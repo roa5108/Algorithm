@@ -10,4 +10,6 @@ result=0
 for i in range(len(a)):
     result+=(k//a[i])
     k%=a[i]
+    if k<=0:
+        break
 print(result)
