@@ -7,8 +7,9 @@ for _ in range(t):
     h,w,n=map(int,input().split())
     if n%h==0:
         floor=h
+        num=n//h
     else:
         floor=n%h
-    num=(n-1)//h+1
+        num=n//h+1
     room=floor*100+num
     print(room)
