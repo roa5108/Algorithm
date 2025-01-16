@@ -9,12 +9,11 @@ cnt=0
 for i in t_num:
     if i==0:
         continue
-    if i<=t:
+    elif i<=t:
         cnt+=1
+    elif i%t==0:
+        cnt+=i//t
     else:
-        if i%t==0:
-            cnt+=i//t
-        else:
-            cnt+=(i//t)+1
+        cnt+=(i//t)+1
 print(cnt)
 print(n//p,n%p)
