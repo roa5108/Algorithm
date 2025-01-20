@@ -1,12 +1,6 @@
 n = int(input())
-word = []
+word = [input() for _ in range(n)]
+w = sorted(set(word), key=lambda x: (len(x), x))
 
-for _ in range(n):
-    word.append(input())
-
-
-unique_word = list(set(word))  # 중복 제거
-unique_word.sort(key=lambda x: (len(x), x))
-
-for i in unique_word:
+for i in w:
     print(i)
