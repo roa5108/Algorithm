@@ -8,8 +8,7 @@ queue = deque(range(1, n + 1))
 result = []
 
 while queue:
-    for _ in range(k - 1):
-        queue.append(queue.popleft())
+    queue.rotate(-(k - 1))
     result.append(queue.popleft())
 
 print("<" + ", ".join(map(str, result)) + ">")
