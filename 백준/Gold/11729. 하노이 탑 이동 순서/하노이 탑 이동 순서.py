@@ -1,5 +1,6 @@
 def hannoi(n, current, target, assistant):
-    if n == 0:
+    if n == 1:
+        print(current, target)
         return
     hannoi(n - 1, current, assistant, target)
     print(current, target)
