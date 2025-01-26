@@ -1,6 +1,5 @@
 def solution(cards1, cards2, goal):
     from collections import deque
-    answer = ''
     cards1=deque(cards1)
     cards2=deque(cards2)
     tmp=[]
