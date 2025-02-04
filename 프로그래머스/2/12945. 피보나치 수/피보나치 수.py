@@ -1,6 +1,3 @@
-import sys
-sys.setrecursionlimit(10**6)
-
 def solution(n):
     return fibo(n)%1234567
 
