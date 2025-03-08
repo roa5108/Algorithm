@@ -3,9 +3,6 @@ from collections import deque
 
 input = sys.stdin.readline
 N, M = map(int, input().split())
-# ladder = [list(map(int, input().split())) for _ in range(N)]
-# snake = [list(map(int, input().split())) for _ in range(M)]
-# max_box = max(ladder, key=lambda x: x[1])
 
 ladder = {}
 snake = {}
