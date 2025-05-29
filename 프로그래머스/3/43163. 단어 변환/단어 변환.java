@@ -3,34 +3,33 @@ import java.util.*;
 class Solution {
     public int solution(String begin, String target, String[] words) {
         Queue<String> q = new ArrayDeque<>();
-        Set<String> visited = new HashSet<>();
+        Map<String, Boolean> visited = new HashMap<>();
+        q.add(begin);
+        visited.put(begin,true);
         int depth=0;
         
-        q.add(begin);
-        visited.add(begin);
         while(!q.isEmpty()){
-            int size=q.size();
-            for(int i=0;i<size;i++){
-                String cur = q.remove();
+            for(int i=0; i<q.size(); i++){
+                String cur=q.remove();
                 if(cur.equals(target)) return depth;
-            for(String word:words){
-                if(canConvert(cur,word) && !visited.contains(word)){
-                    q.add(word);
-                    visited.add(word);
+                for(String word:words){
+                    if(canConvert(cur,word) && !visited.containsKey(word)){
+                        q.add(word);
+                        visited.put(word,true);
                     }
                 }
-            }depth++;
+            }
+            depth++;
         }
         return 0;
     }
     
-    public boolean canConvert(String cur, String next){
+    public boolean canConvert(String now, String next){
         int diff=0;
-        for(int i=0; i<cur.length(); i++){
-            if(cur.charAt(i)!=next.charAt(i)){
-                diff++;
-            }
+        for(int i=0; i<now.length(); i++){
+            if(now.charAt(i)!=next.charAt(i)) diff++;
         }
-        return diff==1;
+        if(diff==1) return true;
+        else return false;
     }
 }
