@@ -1,15 +1,11 @@
 def solution(participant, completion):
-    player={}
+    dic={}
+    for p in participant:
+        dic[p]=dic.get(p,0)+1
     
-    for i in participant:
-        if i in player:
-            player[i]+=1
-        else:
-            player[i]=1
-            
-    for j in completion:
-        player[j]-=1
+    for c in completion:
+        dic[c]-=1
         
-    for j in player:
-        if player[j]>0:
-            return j
+    for name, cnt in dic.items():
+        if cnt>0:
+            return name
